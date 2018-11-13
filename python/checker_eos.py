@@ -69,6 +69,8 @@ class checker_eos():
                     tmpf = yaml.load(stream)
                 except yaml.YAMLError as exc:
                     print(exc)
+                except IOError as exc:
+                    print "I/O error({0}): {1}".format(exc.errno, exc.strerror)
 
             bad_tot=tmpf['merge']['nbad']
             files_tot=tmpf['merge']['ndone']
