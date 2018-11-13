@@ -51,6 +51,9 @@ class printer():
                     tmpf = yaml.load(stream)
                 except yaml.YAMLError as exc:
                     print(exc)
+                except IOError as exc:
+                    print "I/O error({0}): {1}".format(exc.errno, exc.strerror)
+
 
             events_tot=tmpf['merge']['nevents']
             size_tot=tmpf['merge']['size']/1000000000.
