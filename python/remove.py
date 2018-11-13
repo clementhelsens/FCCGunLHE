@@ -30,12 +30,12 @@ class remove():
         print 'remove process in eos'
         cmd="rm %s/%s/output*"%(self.eosdir, self.process)
         print cmd
-        #os.system(cmd)
+        os.system(cmd)
         print 'remove process in yaml'
         cmd="rm %s/%s/output*"%(self.yamldir, self.process)
         print cmd
-        #os.system(cmd)
+        os.system(cmd)
         print 'remove merged yaml'
         cmd="rm %s/%s/merge.yaml"%(self.yamldir, self.process)
         print cmd
-        #os.system(cmd)
+        os.system(cmd)
