@@ -486,7 +486,13 @@ if __name__=="__main__":
         except IOError as e:
             print "I/O error({0}): {1}".format(e.errno, e.strerror)
             time.sleep(10)
-            frun = open(logdir+'/'+frunname, 'w')
+            try:
+                frun = open(logdir+'/'+frunname, 'w')
+            except IOError as e:
+                print "I/O error({0}): {1}".format(e.errno, e.strerror)
+                time.sleep(10)
+                frun = open(logdir+'/'+frunname, 'w')
+
         print frun
 
 
